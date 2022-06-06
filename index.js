@@ -10,7 +10,7 @@ require("./src/config/mongoose");
 // require authorization
 
 // require routes
-const { authRoutes, cleanerRoutes } = require("./src/routes");
+const { authRoutes, cleanerRoutes, historyRoutes } = require("./src/routes");
 
 // middlewares
 app.use(cors());
@@ -28,6 +28,7 @@ app.get("/", (req, res) => {
 
 app.use("/auth", authRoutes);
 app.use("/cleaner", cleanerRoutes);
+app.use("/history", historyRoutes);
 
 app.listen(PORT, () => {
   console.log(`server is running at : http://localhost:${PORT}`);

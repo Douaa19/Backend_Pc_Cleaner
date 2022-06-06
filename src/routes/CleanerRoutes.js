@@ -2,16 +2,12 @@ const express = require("express");
 const router = express.Router();
 
 //
-const { Analyse } = require("../controllers");
+const { Analyse, Cleane } = require("../controllers");
 
 // analyse
-router.route("/analyse")
-.get(Analyse.Analyse);
+router.route("/analyse").post(Analyse.Analyse);
 
 // clean
-router.route("/clean");
-
-// history
-router.route("/history");
+router.route("/").get(Cleane.cleane);
 
 module.exports = router;
